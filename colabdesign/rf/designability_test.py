@@ -83,7 +83,8 @@ def main(argv):
            "use_multimer":o.use_multimer,
            "model_names":["model_1_multimer_v3" if o.use_multimer else "model_1_ptm"]}
 
-  if sum(both_chains) == 0 and sum(fixed_chains) > 0 and sum(free_chains) > 0:
+  # if sum(both_chains) == 0 and sum(fixed_chains) > 0 and sum(free_chains) > 0:
+  if sum(fixed_chains) > 0:
     protocol = "binder"
     print("protocol=binder")
     target_chains = []
@@ -147,7 +148,7 @@ def main(argv):
   elif o.copies > 1:
     af_terms = ["plddt","ptm","i_ptm","pae","i_pae","rmsd"]
   else:
-    af_terms = ["plddt","ptm","i_ptm","pae","i_pae","rmsd"]
+    af_terms = ["plddt","ptm","pae","rmsd"]
 
   labels = ["design","n","score"] + af_terms + ["seq"]
   data = []
