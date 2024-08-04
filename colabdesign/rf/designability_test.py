@@ -147,7 +147,7 @@ def main(argv):
   elif o.copies > 1:
     af_terms = ["plddt","ptm","i_ptm","pae","i_pae","rmsd"]
   else:
-    af_terms = ["plddt","ptm","pae","rmsd"]
+    af_terms = ["plddt","ptm","i_ptm","pae","i_pae","rmsd"]
 
   labels = ["design","n","score"] + af_terms + ["seq"]
   data = []
